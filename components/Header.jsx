@@ -9,16 +9,15 @@ import {
 const Header = () => {
   return (
     <header>
-      {/* Top Div */}
+      {/* Top Nav */}
       <div className="flex items-center bg-amazon_blue p-1 flex-grow py-2">
         <div className="mt-2 flex items-center flex-grow sm:flex-grow-0 px-4">
           <Image
             src="https://links.papareact.com/f90"
             width={150}
-            height={40} 
+            height={40}
             alt={''}
-            objectFit="contain"
-            className='cursor-pointer'
+            className='cursor-pointer object-contain'
             />
         </div>
 
@@ -48,12 +47,22 @@ const Header = () => {
 
       </div>
       
-      {/* Bottom Div */}
-      <div>
-        <p>
-          <Bars3Icon className='h-12'/>
+      {/* Bottom Nav */}
+      <div className="flex space-x-3 p-2 pl-6 items-center bg-amazon_blue-light text-white text-sm">
+        <p className='link items-center flex'>
+          <Bars3Icon className='h-6 mr-1 cursor-pointer'/>
           All
         </p>
+        <p className='link'>Prime Video</p>
+        <p className='link'>Amazon Business</p>
+        <p className='link'>Today's Deals</p>
+        <p className='link hidden lg:inline-flex'>Electronics</p>
+        <p className='link hidden lg:inline-flex'>Food & Delivery</p>
+        <p className='link hidden lg:inline-flex'>Prime</p>
+        <p className='link hidden lg:inline-flex'>Buy Again</p>
+        <p className='link hidden lg:inline-flex'>Shopper Toolkit</p>
+        <p className='link hidden lg:inline-flex'>Health & Personal Care</p>
+
       </div>
     </header>
   )
