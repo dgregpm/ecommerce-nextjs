@@ -1,8 +1,39 @@
+import {Carousel} from 'react-responsive-carousel'
+import "react-responsive-carousel/lib/styles/carousel.min.css";
+import Image from 'next/image'
+
 const Banner = () => {
     return (
-        <>
-            <h1>HELLO BANNER!!</h1>
-        </>
+        <div className='relative'>
+            <Carousel
+                autoPlay
+                infiniteLoop
+                showStatus={false}
+                showIndicators={false}
+                showThumbs={false}
+                interval={5000}
+                >
+                
+                <div>
+                    <img loading='lazy' src="https://links.papareact.com/gi1" alt="" />
+                </div>
+                <div>
+                    <img loading='lazy' src="https://links.papareact.com/6ff" alt="" />
+                </div>
+                {/* <div>
+                    <img loading='lazy' src="https://links.papareact.com/7ma" alt="" />
+                </div> */}
+                <Image 
+                src='https://links.papareact.com/7ma'
+                layout='fill'
+                // width={150}
+                // height={40}
+                alt={''}
+                />
+
+            </Carousel>
+
+        </div>
     );
 }
 
