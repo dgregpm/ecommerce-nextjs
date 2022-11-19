@@ -5,6 +5,7 @@ import Image from 'next/image'
 const Banner = () => {
     return (
         <div className='relative'>
+            <div className='absolute w-full h-32 bg-gradient-to-t from-gray-100 to-transparent z-20 bottom-0'/>
             <Carousel
                 autoPlay
                 infiniteLoop

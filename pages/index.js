@@ -4,7 +4,7 @@ import Banner from '../components/Banner'
 
 export default function Home() {
   return (
-    <>
+    <div className='bg-gray-100'>
       <Head>
         <title>Ecommerce App</title>
       </Head>
@@ -17,6 +17,6 @@ export default function Home() {
 
         {/* Product Feed */}
       </main>
-    </>
+    </div>
   )
 }
