@@ -25,10 +25,11 @@ const Banner = () => {
                     <img loading='lazy' src="https://links.papareact.com/7ma" alt="" />
                 </div> */}
                 <Image 
+                className=''
                 src='https://links.papareact.com/7ma'
-                layout='fill'
-                // width={150}
-                // height={40}
+                // layout='fill'
+                width={1920}
+                height={1080}
                 alt={''}
                 />
 
