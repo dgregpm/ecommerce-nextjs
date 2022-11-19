@@ -17,7 +17,7 @@ export default function Home({products}) {
         <Banner />
 
         {/* Product Feed */}
-        <ProductFeed />
+        <ProductFeed products={products} />
 
       </main>
     </div>
@@ -30,7 +30,7 @@ export async function getServerSideProps(context) {
 
   return {
     props: {
-      products
-    }
+      products,
+    },
   }
 }
