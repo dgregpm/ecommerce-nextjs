@@ -27,7 +27,6 @@ const Banner = () => {
                 <Image 
                 className=''
                 src='https://links.papareact.com/7ma'
-                // layout='fill'
                 width={1920}
                 height={1080}
                 alt={''}
