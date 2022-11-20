@@ -15,23 +15,43 @@ const Banner = () => {
                 interval={5000}
                 >
                 
-                <div>
+                {/* <div>
                     <img loading='lazy' src="https://links.papareact.com/gi1" alt="" />
                 </div>
                 <div>
                     <img loading='lazy' src="https://links.papareact.com/6ff" alt="" />
                 </div>
-                {/* <div>
+                <div>
                     <img loading='lazy' src="https://links.papareact.com/7ma" alt="" />
                 </div> */}
-                <Image 
-                className=''
-                src='https://links.papareact.com/7ma'
-                width={1920}
-                height={1080}
-                alt={''}
-                />
 
+                <div>
+                    <Image 
+                    className=''
+                    src='https://links.papareact.com/gi1'
+                    width={1920}
+                    height={1080}
+                    alt={''}
+                    />
+                </div>
+                <div>
+                    <Image 
+                    className=''
+                    src='https://links.papareact.com/6ff'
+                    width={1920}
+                    height={1080}
+                    alt={''}
+                    />
+                </div>
+                <div>
+                    <Image 
+                    className=''
+                    src='https://links.papareact.com/7ma'
+                    width={1920}
+                    height={1080}
+                    alt={''}
+                    />
+                </div>
             </Carousel>
 
         </div>

@@ -23,7 +23,8 @@ function Product({id,title,price,description,category,image}) {
             className='object-cover m-auto'
             src={image}
             height={200}
-            width={200}            
+            width={200}
+            alt={''}            
         />
 
         <h4 className='my-3'>{title}</h4>
@@ -31,6 +32,7 @@ function Product({id,title,price,description,category,image}) {
         <div className='flex'>
             {Array(rating).fill().map((i) => (
                 <StarIcon 
+                    key={i}
                     className='h-5 text-yellow-500'
                 />
             ))}
@@ -44,7 +46,12 @@ function Product({id,title,price,description,category,image}) {
 
         {hasPrime && (
             <div className='flex items-center space-x-2 -mt-5'>
-                <img className='w-12' src="https://links.papareact.com/fdw" alt="" />
+                <Image className='w-12'
+                src="https://links.papareact.com/fdw" 
+                alt={""}
+                height={100}
+                width={100}
+                 />
                 <p className='text-xs text-gray-500'>FREE Next-day Delivery</p>
             </div>
         )}
