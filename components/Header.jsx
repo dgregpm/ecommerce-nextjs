@@ -31,7 +31,7 @@ const Header = () => {
         {/* Right Side */}
         <div className='flex text-white items-center text-xs space-x-6 mx-6 whitespace-nowrap'>
           <div className='link'>
-            <p>Hello, Sonny Sangha!</p>
+            <p>Hello, Julian Lawrence!</p>
             <p className='font-extrabold md:text-sm'>Account & Lists</p>
           </div>
           <div className='link'>
