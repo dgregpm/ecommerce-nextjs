@@ -5,8 +5,12 @@ import {
   MagnifyingGlassIcon,
   ShoppingCartIcon,
 } from '@heroicons/react/24/outline'
+import {signIn, signOut, useSession} from 'next-auth/react'
 
 const Header = () => {
+  const { data: session } = useSession();
+
+  
   return (
     <header>
       {/* Top Nav */}
@@ -30,8 +34,10 @@ const Header = () => {
 
         {/* Right Side */}
         <div className='flex text-white items-center text-xs space-x-4 mx-4 whitespace-nowrap'>
-          <div className='link'>
-            <p>Hello, Beautiful!</p>
+          <div onClick={!session ? signIn : signOut} className='link'>
+            <p>
+              {session ? `Hello, ${session.user.name}` : `Sign In`}
+            </p>
             <p className='font-extrabold md:text-sm'>Account & Lists</p>
           </div>
           <div className='link'>
