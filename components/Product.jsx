@@ -36,20 +36,20 @@ function Product({id,title,price,description,category,image}) {
             ))}
         </div>
 
-        <p className='text-xs my-2'>{description}</p>
+        <p className='text-xs my-2 line-clamp-3'>{description}</p>
 
-        <div>
+        <div className='mb-5'>
             <Currency quantity={price} currency='USD'/>
         </div>
 
         {hasPrime && (
-            <div>
-                <img src="https://links.papareact.com/fdw" alt="" />
-                <p>FREE Next-day Delivery</p>
+            <div className='flex items-center space-x-2 -mt-5'>
+                <img className='w-12' src="https://links.papareact.com/fdw" alt="" />
+                <p className='text-xs text-gray-500'>FREE Next-day Delivery</p>
             </div>
         )}
 
-        <button>Add to Basket</button>
+        <button className='mt-auto button'>Add to Basket</button>
     </div>
   )
 }
