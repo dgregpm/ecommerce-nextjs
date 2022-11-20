@@ -25,7 +25,7 @@ const Banner = () => {
                     <img loading='lazy' src="https://links.papareact.com/7ma" alt="" />
                 </div> */}
 
-                <div>
+                <div className=''>
                     <Image 
                     className=''
                     src='https://links.papareact.com/gi1'
