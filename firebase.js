@@ -1,3 +1,5 @@
+import firebase from 'firebase'
+
 const firebaseConfig = {
     apiKey: "AIzaSyDQr8Z6lnm34kVGno1cPyFU_ZYTwVL3pKY",
     authDomain: "ecommerce-nextjs-d3bd8.firebaseapp.com",
