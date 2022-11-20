@@ -20,10 +20,10 @@ function Product({id,title,price,description,category,image}) {
         <p className='absolute top-2 right-2 italic text-gray-400'>{category}</p>
 
         <Image 
-            className='object-contain'
+            className='object-cover m-auto'
             src={image}
             height={200}
-            width={200}
+            width={200}            
         />
 
         <h4 className='my-3'>{title}</h4>
@@ -49,7 +49,7 @@ function Product({id,title,price,description,category,image}) {
             </div>
         )}
 
-        <button className='mt-auto button'>Add to Basket</button>
+        <button className='button'>Add to Basket</button>
     </div>
   )
 }
