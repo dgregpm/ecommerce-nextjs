@@ -39,6 +39,10 @@ function Product({id,title,price,description,category,image}) {
         
         <p>{description}</p>
 
+        <div>
+            
+        </div>
+
     </div>
   )
 }
