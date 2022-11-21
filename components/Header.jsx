@@ -20,22 +20,23 @@ const Header = () => {
         <div onClick={() => router.push('/')} className="mt-2 flex items-center flex-grow sm:flex-grow-0 ml-4 sm:mr-4">
           <Image
             src="https://links.papareact.com/f90"
-            width={200}
-            height={200}
+            width={150}
+            height={150}
             alt={''}
             className='cursor-pointer object-fill'
             />
         </div>
 
         {/* Search */}
-        <div className='hidden sm:flex bg-yellow-400 hover:bg-yellow-500 items-center h-10 rounded-md flex-grow cursor-pointer'>
+        <div className='hidden flex-shrink sm:flex bg-yellow-400 hover:bg-yellow-500 items-center h-10 rounded-md flex-grow cursor-pointer'>
           <input className='p-2 h-full w-6 flex-grow flex-shrink rounded-l-md focus:outline-none px-4' type="text" />
           <MagnifyingGlassIcon className='h-12 p-3'/>
           
         </div>
 
         {/* Right Side */}
-        <div className='flex text-white items-center text-xs space-x-4 mx-4 whitespace-nowrap'>
+        <div className='flex flex-grow text-white items-center text-xs justify-around sm:flex-grow-0 sm:space-x-4 sm:mx-4 whitespace-nowrap'>
+          
           <div onClick={!session ? signIn : signOut} className='link'>
             <p>
               {session ? `Hello, ${session.user.name}` : `Sign In`}
@@ -52,7 +53,6 @@ const Header = () => {
             <p className='hidden mt-3 md:inline font-extrabold md:text-sm'>Basket</p>
           </div>
         </div>
-
       </div>
       
       {/* Bottom Nav */}
