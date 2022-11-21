@@ -6,16 +6,18 @@ import {
   ShoppingCartIcon,
 } from '@heroicons/react/24/outline'
 import {signIn, signOut, useSession} from 'next-auth/react'
+import { useRouter } from 'next/router'
 
 const Header = () => {
   const { data: session } = useSession();
+  const router = useRouter();
 
   
   return (
     <header>
       {/* Top Nav */}
       <div className="flex items-center bg-amazon_blue p-1 flex-grow py-2">
-        <div className="mt-2 flex items-center flex-grow sm:flex-grow-0 ml-4 sm:mr-4">
+        <div onClick={() => router.push('/')} className="mt-2 flex items-center flex-grow sm:flex-grow-0 ml-4 sm:mr-4">
           <Image
             src="https://links.papareact.com/f90"
             width={200}
@@ -44,7 +46,7 @@ const Header = () => {
             <p>Returns</p>
             <p className='font-extrabold md:text-sm'>& Orders</p>
           </div>
-          <div className='flex relative items-center link'>
+          <div onClick={() => router.push('/checkout')} className='flex relative items-center link'>
             <span className='text-black absolute top-0 right-0 md:right-10 h-4 w-4 text-center bg-yellow-400 rounded-full'>0</span>
             <ShoppingCartIcon className='h-12' />
             <p className='hidden mt-3 md:inline font-extrabold md:text-sm'>Basket</p>
