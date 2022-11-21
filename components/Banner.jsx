@@ -32,6 +32,7 @@ const Banner = () => {
                     width={1920}
                     height={1080}
                     alt={''}
+                    priority
                     />
                 </div>
                 <div>
@@ -41,6 +42,7 @@ const Banner = () => {
                     width={1920}
                     height={1080}
                     alt={''}
+                    priority
                     />
                 </div>
                 <div>
@@ -50,6 +52,7 @@ const Banner = () => {
                     width={1920}
                     height={1080}
                     alt={''}
+                    priority
                     />
                 </div>
             </Carousel>

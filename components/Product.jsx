@@ -20,7 +20,7 @@ function Product({id,title,price,description,category,image}) {
         <p className='absolute top-2 right-2 italic text-gray-400'>{category}</p>
 
         <Image 
-            className='object-cover m-auto'
+            className='object-cover m-auto w-auto h-auto'
             src={image}
             height={200}
             width={200}
