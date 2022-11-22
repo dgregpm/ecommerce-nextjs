@@ -59,7 +59,7 @@ function Checkout() {
                 </span>
               </h2>
               <button 
-                disabled='false'
+                disabled={!session}
                 className={`button mt-2 ${!session && `from-gray-300 to-gray-500 border-gray-200 text-gray-300 cursor-not-allowed`}`}>
                 {!session ? 'Sign in to checkout' : 'Proceed to checkout'}
               </button>
