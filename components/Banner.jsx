@@ -29,8 +29,8 @@ const Banner = () => {
                     <Image 
                     className=''
                     src='https://links.papareact.com/gi1'
-                    width={1920}
-                    height={1080}
+                    width={1280}
+                    height={720}
                     alt={''}
                     priority
                     />
@@ -39,8 +39,8 @@ const Banner = () => {
                     <Image 
                     className=''
                     src='https://links.papareact.com/6ff'
-                    width={1920}
-                    height={1080}
+                    width={1280}
+                    height={720}
                     alt={''}
                     />
                 </div>
@@ -48,8 +48,8 @@ const Banner = () => {
                     <Image 
                     className=''
                     src='https://links.papareact.com/7ma'
-                    width={1920}
-                    height={1080}
+                    width={1280}
+                    height={720}
                     alt={''}
                     />
                 </div>
