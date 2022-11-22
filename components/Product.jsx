@@ -23,10 +23,12 @@ function Product({id,title,price,description,category,image}) {
         const product = {
             id,
             title,
+            rating,
             price,
             description,
             category,
             image,
+            hasPrime
         };
 
         // sending product to redux store

@@ -3,6 +3,7 @@ import React from 'react'
 import { selectItems } from '../app/store'
 import Header from '../components/Header'
 import {useSelector} from 'react-redux'
+import CheckoutProduct from '../components/CheckoutProduct'
 
 function Checkout() {
   const items = useSelector(selectItems)
@@ -29,7 +30,16 @@ function Checkout() {
             </h1>
 
             {items.map((item, i) => (
-              <CheckoutProduct />
+              <CheckoutProduct key={i}
+                id={item.id}
+                title={item.title}
+                rating={item.rating}
+                price={item.price}
+                description={item.description}
+                category={item.category}
+                image={item.image}
+                hasPrime={item.hasPrime}
+              />
             ))}
 
           </div>
