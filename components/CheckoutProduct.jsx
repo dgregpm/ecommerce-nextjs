@@ -3,11 +3,18 @@ import Image from 'next/image'
 import React from 'react'
 import Currency from 'react-currency-formatter'
 import {useDispatch} from 'react-redux'
+import { addToBasket, removeFromBasket } from '../app/store'
 
 function CheckoutProduct({id,title,price,rating,description,category,image,hasPrime}) {
   const dispatch = useDispatch();
   const addItemToBasket = () => {
-    
+    const product = {
+      id,title,price,rating,description,category,image,hasPrime
+    };
+    dispatch(addToBasket(product))
+  }
+  const removeItemFromBasket = () => {
+    dispatch(removeFromBasket({id}));
   }
   return (
     <div className='grid grid-cols-5'>
@@ -42,8 +49,8 @@ function CheckoutProduct({id,title,price,rating,description,category,image,hasPr
       </div>
           {/* Right */}
           <div className='flex flex-col space-y-2 mx-auto justify-self-end'>
-            <button className='button'></button>
-            <button className='button'></button>
+            <button onClick={addItemToBasket} className='button'>Add to Basket</button>
+            <button onClick={removeItemFromBasket} className='button'>Remove from Basket</button>
           </div>
     </div>
   )
