@@ -10,7 +10,7 @@ import Currency from 'react-currency-formatter'
 function Checkout() {
   const items = useSelector(selectItems)
   const total = useSelector(selectTotal)
-  const {session} = useSession();
+  const { data: session} = useSession();
 
   return (
     <div className='bg-gray-100'>
