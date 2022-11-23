@@ -16,7 +16,7 @@ const basketSlice = createSlice({
         const index = state.items.findIndex(basketItem => basketItem.id === action.payload.id)
         let newBasket = [...state.items]
         if(index >= 0) {
-          newBasket.splice(index)
+          newBasket.splice(index,1)
         } else {
           console.warn('error')
         }
@@ -30,6 +30,7 @@ const basketSlice = createSlice({
   
   //Selectors
   export const selectItems = (state) => state.basket.items;
+  export const selectTotal = (state) => state.basket.items.reduce((acc,item) => acc + item.price,0)
 
   // Global store setup
 export const store = configureStore({
