@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import React from 'react'
-import { selectItems, selectTotal } from '../app/store'
+import { selectItems, selectTotal } from '../redux/store'
 import Header from '../components/Header'
 import {useSelector} from 'react-redux'
 import CheckoutProduct from '../components/CheckoutProduct'

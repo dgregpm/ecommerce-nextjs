@@ -3,7 +3,7 @@ import Image from 'next/image'
 import React from 'react'
 import Currency from 'react-currency-formatter'
 import {useDispatch} from 'react-redux'
-import { addToBasket, removeFromBasket } from '../app/store'
+import { addToBasket, removeFromBasket } from '../redux/store'
 
 function CheckoutProduct({id,title,price,rating,description,category,image,hasPrime}) {
   const dispatch = useDispatch();
