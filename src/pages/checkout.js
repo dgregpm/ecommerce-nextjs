@@ -23,17 +23,17 @@ function Checkout() {
     const stripe = await stripePromise;
 
     //call api backend to create a checkout session
-    // const checkoutSession = await axios.post('/api/create-checkout-session',
-    // {
-    //   items: items,
-    //   email: session.user.email
-    // })
-
-    const checkoutSession = await fetch("/api/create-checkout-session", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ items: items, email: session.user.email }),
+    const checkoutSession = await axios.post('/api/create-checkout-session',
+    {
+      items: items,
+      email: session.user.email
     })
+
+    // const checkoutSession = await fetch("/api/create-checkout-session", {
+    //   method: "POST",
+    //   headers: { "Content-Type": "application/json" },
+    //   body: JSON.stringify({ items: items, email: session.user.email }),
+    // })
   }
 
 
