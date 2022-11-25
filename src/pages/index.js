@@ -33,18 +33,16 @@ export default function Home({ products }) {
         <Banner />
         {console.log(products)}
         {/* Product Feed */}
-        {/* <ProductFeed products={products} /> */}
+        <ProductFeed products={products} />
       </main>
     </div>
   )
 }
 
+
 export async function getServerSideProps(context) {
-  // const res = await fetch('https://fakestoreapi.com/products')
-  // const products = await res.json()
-  
-   const { data } = await axios.get("https://fakestoreapi.com/products");
-   const products = data;
+  const res = await fetch('https://fakestoreapi.com/products')
+  const products = await res.json()
   
   return {
     props: { products }

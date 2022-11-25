@@ -26,7 +26,7 @@ const Header = () => {
             width={150}
             height={150}
             alt={''}
-            className='cursor-pointer w-auto h-auto object-fill'
+            className='cursor-pointer'
             />
         </div>
 

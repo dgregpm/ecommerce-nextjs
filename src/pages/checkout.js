@@ -7,12 +7,35 @@ import Image from 'next/image'
 import { useSelector } from 'react-redux'
 import { selectItems, selectTotal } from '../redux/store'
 import { useSession } from 'next-auth/react'
+import { loadStripe } from '@stripe/stripe-js'
+import axios from 'axios'
+
+const stripePromise = loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY)
 
 
 function Checkout() {
   const items = useSelector(selectItems)
   const total = useSelector(selectTotal)
-  const { data: session} = useSession();
+  const { data: session } = useSession();
+  
+  const createCheckoutSession = async() => {
+    // console.log(stripePromise)
+    const stripe = await stripePromise;
+
+    //call api backend to create a checkout session
+    // const checkoutSession = await axios.post('/api/create-checkout-session',
+    // {
+    //   items: items,
+    //   email: session.user.email
+    // })
+
+    const checkoutSession = await fetch("/api/create-checkout-session", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ items: items, email: session.user.email }),
+    })
+  }
+
 
   return (
     <div className='bg-gray-100'>
@@ -62,8 +85,10 @@ function Checkout() {
                 </span>
               </h2>
               <button
+                role="link"
+                onClick={createCheckoutSession}
                 disabled={!session}
-                className={`button mt-2 ${!session && `active:from-gray-300 active:to-gray-500 from-gray-300 to-gray-500 border-gray-200 text-gray-300 cursor-not-allowed`}`}>
+                className={`button mt-2 max-w-xs ${!session && `active:from-gray-300 active:to-gray-500 from-gray-300 to-gray-500 border-gray-200 text-gray-300 cursor-not-allowed`}`}>
                 {!session ? 'Sign in to checkout' : 'Proceed to checkout'}
               </button>
             </div>
