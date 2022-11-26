@@ -12,28 +12,34 @@ import axios from 'axios'
 
 const stripePromise = loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY)
 
-
 function Checkout() {
   const items = useSelector(selectItems)
   const total = useSelector(selectTotal)
   const { data: session } = useSession();
   
   const createCheckoutSession = async() => {
-    // console.log(stripePromise)
-    const stripe = await stripePromise;
+    try {
+      // console.log(stripePromise)
+      const stripe = await stripePromise;
 
-    //call api backend to create a checkout session
-    const checkoutSession = await axios.post('/api/create-checkout-session',
-    {
-      items: items,
-      email: session.user.email
-    })
+      //call api backend to create a checkout session
+      const checkoutSession = await axios.post('/api/create-checkout-session',
+      {
+        items: items,
+        email: session.user.email
+      })
 
-    // const checkoutSession = await fetch("/api/create-checkout-session", {
-    //   method: "POST",
-    //   headers: { "Content-Type": "application/json" },
-    //   body: JSON.stringify({ items: items, email: session.user.email }),
-    // })
+        // Redirect to stripe checkout
+      const result = await stripe.redirectToCheckout({
+        sessionId: checkoutSession.data.id
+      })
+
+      if(result.error){
+        alert(result.error.message)
+      }
+    } catch(err) {
+      console.log(`Error: ${err}`)
+    }
   }
 
 
